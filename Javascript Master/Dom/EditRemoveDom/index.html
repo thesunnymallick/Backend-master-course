@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+   
+<script>
+    // add element 
+
+      const addElement=(langName)=>{
+         const li= document.createElement("li");
+         li.innerHTML=langName;
+        document.querySelector(".language").appendChild(li);
+      }
+
+      addElement("Python")
+      addElement("C++");
+      addElement("Rubi");
+
+      // add Elemeent with optimaize:
+     const addElementOpti=(langName)=>{
+        const li= document.createElement("li");
+        const textNode=document.createTextNode(langName);
+        li.appendChild(textNode);
+        document.querySelector(".language").appendChild(li);
+     }
+
+     addElementOpti("Java");
+
+   // Edit Element 
+   const selectElement=document.querySelector("li:first-child");
+       selectElement.innerHTML="Javascript(Es6)"
+
+    //Edit Element 
+
+    const secondElement=document.querySelector("li:nth-child(2)");
+    const  newLi=document.createElement("li");
+    newLi.textContent="Python2.0"
+    secondElement.replaceWith(newLi);
+
+
+    // Remove Element
+  const revomeEle=document.querySelector("li:nth-child(4)");
+   revomeEle.remove();
+    
+
+
+
+
+
+</script>
+</html>

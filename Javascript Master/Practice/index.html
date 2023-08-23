@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice async</title>
+</head>
+<style>
+    *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    }
+    body{
+        background-color: #212121;
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+        padding: 0.3rem 0rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .btn-box{
+        display: flex;
+        margin-top: 1rem;
+        
+    }
+    .btn{
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        font-size: 1.1rem;
+        margin: 0.7rem;
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        transition: all 0.3s;
+        border-radius: 7px;
+        border: 1px solid black;
+    }
+    #start{
+        background-color: rgb(154, 45, 154);
+        color: white;
+    }
+    #start:hover{
+        background-color: rgb(88, 15, 88);
+        color: white;
+    }
+    #stop{
+        background-color: rgb(154, 58, 45);
+        color: white;
+    }
+    #stop:hover{
+        background-color: rgb(81, 22, 14);
+        color: white;
+    }
+
+
+</style>
+<body>
+    <div class="box">
+        <h1 id="text">Hay, Sunny Mallick</h1>
+          <div class="btn-box">
+         <button class="btn" id="start">start</button>
+         <button class="btn" id="stop">stop</button>
+          </div>
+    </div>
+
+    <script>
+      const text=document.getElementById("text")
+      const start=document.querySelector("#start")
+      const stop1 =document.querySelector("#stop");
+      let reffernace;
+      const interFun=(str)=>{
+        const date=new Date();
+        const time= new Date().toTimeString().split(" ")[0];
+        text.innerHTML=time;
+      }
+      const startNow=()=>{
+       reffernace=setInterval(interFun,1000, 'Hay, Alfe Sunny Mallick')
+      }
+      const endNow=()=>{
+        clearInterval(reffernace);
+        console.log("stoped")
+      }
+     
+      start.addEventListener("click", ()=>{
+          startNow()
+      })
+
+      stop1.addEventListener("click", ()=>{
+         console.log("endiing")
+        endNow()
+      })
+      
+
+    </script>
+</body>
+
+</html>
